@@ -127,4 +127,4 @@ GET  `http://localhost:8080/products/category/electronics`
  ```
 
 
-`Thank you for checking out the Product Management API. We appreciate your interest and support!`
+```  Thank you for checking out the Product Management API. We appreciate your interest and support! ```
