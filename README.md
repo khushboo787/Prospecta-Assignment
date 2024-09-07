@@ -39,7 +39,7 @@ mvn spring-boot:run
 ##### Request
 ```
 
-GET http://localhost:8080/products/category/electronics
+GET  `http://localhost:8080/products/category/electronics`
 
 ```
 ##### Response
@@ -104,8 +104,7 @@ GET http://localhost:8080/products/category/electronics
 ```
 # CSV Handling
 1. Process CSV with Formulas
-- **Endpoint:** POST /process-csv
-  `http://localhost:8080/csv/process`
+- **Endpoint:** POST `http://localhost:8080/csv/process`
 - **Description:** Upload a CSV file with values and formulas. The API will evaluate the formulas and return a processed CSV file with the results.
 - **Request Body:**  CSV file upload
 - **Input CSV:**
