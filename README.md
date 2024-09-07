@@ -8,14 +8,11 @@
 ## Features
 1. List Products by Category: Fetch product details based on the provided category.
 2. Add New Product: Add a new product to the FakeStore database using POST requests.
-3. CSV File Handling: Process CSV files with values and formulas, evaluate the formulas, and return the results.
-
    
 ## Technologies Used
 - Java
 - Spring Boot
 - RestTemplate for API calls
-- CSV Parsing Library for file handling
 
  ### Setup and Installation
 
@@ -27,53 +24,81 @@ cd product-management-api
 
 ```
 
-#### Access the API:
-The API will be running on http://localhost:8080.
 
-API Endpoints
-Product Management
-List Products by Category
+#### The application will be accessible at http://localhost:8070
 
-Endpoint: GET /products/category/{category}
-Description: Retrieves a list of products for the specified category.
-Example:
+### Build and Run the Application
+```
+mvn clean install
+mvn spring-boot:run
+```
+
+### API Endpoints
+- **List of Products by Category:** `GET /products/category/{category}`
+
+##### Request
+```
 
 GET http://localhost:8080/products/category/electronics
-Response:
-json
+
+```
+##### Response
+
+```
 
 [
-  {
-    "id": 1,
-    "title": "Wireless Headphones",
-    "price": 59.99,
-    "category": "electronics"
-  },
-  {
-    "id": 2,
-    "title": "Smartphone",
-    "price": 399.99,
-    "category": "electronics"
-  }
+    {
+        "id": 9,
+        "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+        "price": 64,
+        "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+        "category": "electronics",
+        "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+        "rating": {
+            "rate": 3.3,
+            "count": 203
+        }
+    },
+    {
+        "id": 10,
+        "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+        "price": 109,
+        "description": "Easy upgrade for faster boot up, shutdown, application load and response Performance may vary depending upon drive capacity, host device, OS and application.)",
+        "category": "electronics",
+        "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+        "rating": {
+            "rate": 2.9,
+            "count": 470
+        }
+    }
 ]
-Add New Product
 
-Endpoint: POST /products
-Description: Adds a new product to the FakeStore database.
-Request Body:
-json
-Copy code
+```
+- **Add New Product:** `POST /products`
+
+##### Request Body:
+
+```
 {
-  "title": "Laptop",
-  "price": 899.99,
-  "category": "electronics"
+    "title": "HP Laptop",
+    "price": 30000,
+    "description": "A new product HP Laptop added to the store",
+    "category": "electronics",
+    "image": "https://m.media-amazon.com/images/I/4143CSktumL._SX300_SY300_QL70_FMwebp_.jpg"
 }
-Response:
-json
-Copy code
+
+
+```
+##### Response:
+```
+
 {
-  "id": 101,
-  "title": "Laptop",
-  "price": 899.99,
-  "category": "electronics"
+    "id": 21,
+    "title": "HP Laptop",
+    "price": 30000,
+    "description": "A new product HP Laptop added to the store",
+    "image": "https://m.media-amazon.com/images/I/4143CSktumL._SX300_SY300_QL70_FMwebp_.jpg",
+    "category": "electronics"
 }
+
+```
